@@ -507,15 +507,14 @@ class MovieClip extends flash.display.MovieClip {
 		} else if (Std.is (frame, String)) {
 			
 			var label:String = cast frame;
+			var frameLabel:FrameLabel;
 			
-			for (i in 0...__symbol.frames.length) {
+			for (i in 0...__currentLabels.length) {
 				
-				if (__symbol.frames[i].label == label) {
-					
-					return i;
-					
-				}
+				frameLabel = __currentLabels[i];
 				
+				if (frameLabel.name == label) return frameLabel.frame;
+					
 			}
 			
 		}
