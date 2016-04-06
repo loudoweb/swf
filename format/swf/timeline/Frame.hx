@@ -51,7 +51,7 @@ class Frame
 	
 	public function placeObject(tagIndex:Int, tag:TagPlaceObject):Void {
 		var frameObject:FrameObject = objects.get (tag.depth);
-		if(frameObject != null) {
+		if (frameObject != null) {
 			// A character is already available at the specified depth
 			if(tag.characterId == 0 #if neko || tag.characterId == null #end) {
 				// The PlaceObject tag has no character id defined:
@@ -63,9 +63,8 @@ class Frame
 				// A character id is defined:
 				// This means that the previous character is replaced 
 				// (possible transforms defined in previous frames are discarded)
-				if(tag.hasName || tag.hasMatrix || tag.hasColorTransform || tag.hasFilterList) {
-					frameObject.lastModifiedAtIndex = tagIndex;
-				}
+				frameObject.lastModifiedAtIndex = 0;
+				frameObject.placedAtIndex = tagIndex;
 				frameObject.isKeyframe = true;
 				if(tag.characterId != frameObject.characterId) {
 					// The character id does not match the previous character:
