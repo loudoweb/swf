@@ -4,7 +4,7 @@
   "license": "MIT",
   "tags": [ ],
   "description": "Provides support for parsing and displaying SWF content",
-  "version": "2.2.0",
+  "version": "2.2.0_improved",
   "releasenote": "Update for OpenFL 3.6, minor fixes",
   "contributors": [ "singmajesty" ]
 }
