@@ -592,7 +592,7 @@ class Tools {
 				if (targetDirectory != null) {
 					
 					cacheDirectory = targetDirectory + "/obj/libraries/" + library.name;
-					var cacheFile = cacheDirectory + "/" + library.name + ".dat";
+					var cacheFile = cacheDirectory + "/" + library.name + ".txt";
 					
 					if (FileSystem.exists (cacheFile)) {
 						
@@ -630,7 +630,7 @@ class Tools {
 						
 					}
 					
-					var swfLiteAsset = new Asset (cacheDirectory + "/" + library.name + ".dat", "lib/" + library.name + "/" + library.name + ".dat", AssetType.TEXT);
+					var swfLiteAsset = new Asset (cacheDirectory + "/" + library.name + ".txt", "lib/" + library.name + "/" + library.name + ".txt", AssetType.TEXT);
 					
 					if (library.embed != null) {
 						
@@ -727,12 +727,12 @@ class Tools {
 						
 					//}
 					
-					var swfLiteAsset = new Asset ("", "lib/" + library.name + "/" + library.name + ".dat", AssetType.TEXT);
+					var swfLiteAsset = new Asset ("", "lib/" + library.name + "/" + library.name + ".txt", AssetType.TEXT);
 					var swfLiteAssetData = swfLite.serialize ();
 					
 					if (cacheDirectory != null) {
 						
-						swfLiteAsset.sourcePath = cacheDirectory + "/" + library.name + ".dat";
+						swfLiteAsset.sourcePath = cacheDirectory + "/" + library.name + ".txt";
 						File.saveContent (swfLiteAsset.sourcePath, swfLiteAssetData);
 						
 					} else {
@@ -762,7 +762,7 @@ class Tools {
 				var data:Dynamic = {};
 				data.version = 0.1;
 				data.type = "format.swf.lite.SWFLiteLibrary";
-				data.args = [ "lib/" + library.name + "/" + library.name + ".dat" ];
+				data.args = [ "lib/" + library.name + "/" + library.name + ".txt" ];
 				
 				var asset = new Asset ("", "lib/" + library.name + ".json", AssetType.TEXT);
 				asset.id = "libraries/" + library.name + ".json";
